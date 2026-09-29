@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northwind Bike Co. Docs Q&amp;A</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <h1>Docs Q&amp;A</h1>
+    <p class="subtitle">Northwind Bike Co.</p>
+
+    <div id="demo-banner" class="banner hidden">
+      demo mode: set LLM_API_KEY for written answers
+    </div>
+
+    <h2>Documents</h2>
+    <ul id="doc-list"></ul>
+
+    <form id="upload-form">
+      <input type="file" id="file-input" accept=".pdf,.txt,.md" required>
+      <button type="submit">Upload</button>
+    </form>
+    <p id="upload-status" class="status"></p>
+  </aside>
+
+  <main class="chat">
+    <div id="answer-panel" class="answer-panel hidden">
+      <div id="answer-text"></div>
+      <div id="citations" class="citations"></div>
+    </div>
+
+    <form id="ask-form">
+      <input type="text" id="question-input" placeholder="Ask a question about the documents..." required>
+      <button type="submit">Ask</button>
+    </form>
+    <p id="ask-status" class="status"></p>
+  </main>
+</div>
+
+<div id="citation-modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="modal-close" class="modal-close">&times;</button>
+    <div id="modal-source" class="modal-source"></div>
+    <div id="modal-text" class="modal-text"></div>
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
